@@ -100,6 +100,8 @@ export interface PortfolioData {
     role: string;
     period: string;
     company: string;
+    program?: string;
+    certificateDate?: string;
     details: string;
     note: string;
   };

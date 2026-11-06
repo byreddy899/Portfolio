@@ -121,7 +121,7 @@ export const App: React.FC = () => {
                   marginBottom: '28px'
                 }}
               >
-                The Portal section is live with the glowing arch gate, YR monogram artifact, Decode Labs internship card, and certifications list.
+                The Portal section is live with your verified portrait framed in the glowing architectural arch gate, direct contact channels (Email, GitHub, LinkedIn), Decode Labs internship card, and 6 certifications.
               </p>
 
               <div className="note" style={{ maxWidth: '620px' }}>

@@ -152,18 +152,20 @@ export const portfolioData: PortfolioData = {
   },
   internship: {
     role: 'Data Science Intern',
-    period: 'Internship · 22 Aug – 22 Sep 2026',
     company: 'Decode Labs',
-    details: 'DecodeLabs Virtual Internship Program. Hands-on projects and collaborative tasks. Certificate issued 23 September 2026.',
-    note: 'More 2026 certificates (NPTEL, DataCamp, Decode Labs, Infosys Springboard) are being added.'
+    program: 'Virtual Internship Program',
+    period: '22 August 2026 – 22 September 2026',
+    certificateDate: '23 September 2026',
+    details: 'Hands-on projects and collaborative tasks in Data Science.',
+    note: 'More 2026 certificates and course completions from NPTEL, DataCamp, Decode Labs, and Infosys Springboard are being added.'
   },
   certifications: [
     { title: 'Programming in Java (Elite)', issuer: 'NPTEL, IIT Kharagpur' },
-    { title: 'GenAI Powered Data Analytics Job Simulation', issuer: 'Tata · Forage', date: '4 Jul 2026' },
-    { title: 'Advanced Software Engineering Job Simulation', issuer: 'Walmart · Forage', date: '5 Jul 2026' },
-    { title: 'Introduction to Generative AI', issuer: '', date: '6 Jul 2026' },
+    { title: 'GenAI Powered Data Analytics Job Simulation', issuer: 'Tata (via Forage)', date: 'July 2026' },
+    { title: 'Advanced Software Engineering Job Simulation', issuer: 'Walmart Global Tech (via Forage)', date: 'July 2026' },
     { title: 'Introduction to Unix', issuer: 'Infosys Springboard' },
-    { title: 'Data Science Virtual Internship', issuer: 'DecodeLabs', date: '23 Sep 2026' }
+    { title: 'Introduction to Generative AI', issuer: '', date: 'July 2026' },
+    { title: 'Virtual Internship in Data Science', issuer: 'Decode Labs', date: 'September 2026' }
   ],
   contact: {
     heading: 'This is where you come in.',
