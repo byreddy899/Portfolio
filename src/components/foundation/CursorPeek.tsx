@@ -94,3 +94,4 @@ export const CursorPeek: React.FC = () => {
     </div>
   );
 };
+

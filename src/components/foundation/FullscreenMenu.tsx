@@ -103,3 +103,4 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose,
     </nav>
   );
 };
+

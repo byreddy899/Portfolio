@@ -74,3 +74,4 @@ export const Navbar: React.FC<NavbarProps> = ({ authorName, isMenuOpen, onToggle
     </>
   );
 };
+

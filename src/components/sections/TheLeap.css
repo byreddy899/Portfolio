@@ -1,0 +1,173 @@
+/* ==========================================================================
+   Section 1: The Leap — Cinematic Opening Sequence
+   ========================================================================== */
+
+#leap {
+  height: 340vh;
+  position: relative;
+  background-color: var(--bg);
+}
+
+.leap-stick {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  contain: layout paint;
+}
+
+/* Conic & radial golden light beam originating from upper-right */
+.leap-beam {
+  position: absolute;
+  inset: -10% -20%;
+  background: conic-gradient(
+      from 195deg at 78% -8%,
+      transparent 0,
+      rgba(255, 181, 46, 0) 6%,
+      rgba(255, 181, 46, 0.85) 11%,
+      rgba(255, 106, 10, 0.5) 16%,
+      transparent 24%
+    ),
+    radial-gradient(70% 80% at 80% 0, rgba(255, 150, 20, 0.55), transparent 70%),
+    #0a0703;
+  transition: opacity 0.2s ease-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Oversized outlined typography: "FALL" */
+.leap-fall {
+  position: absolute;
+  left: 4vw;
+  top: 50%;
+  transform: translateY(-50%);
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 235, 200, 0.55);
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, opacity;
+  z-index: 2;
+}
+
+/* Oversized solid ivory typography: "LET GO" */
+.leap-go {
+  position: absolute;
+  right: 4vw;
+  bottom: 14vh;
+  color: var(--ink);
+  text-align: right;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, opacity;
+  z-index: 2;
+}
+
+/* Tumbling Stick Figure SVG */
+.leap-fig {
+  position: absolute;
+  left: 62%;
+  top: 6vh;
+  width: clamp(90px, 14vw, 170px);
+  will-change: transform;
+  filter: drop-shadow(0 0 18px rgba(255, 160, 30, 0.8));
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Bottom-left Introduction */
+.leap-intro {
+  position: absolute;
+  left: clamp(20px, 4vw, 48px);
+  bottom: 9vh;
+  max-width: 380px;
+  z-index: 4;
+  pointer-events: auto;
+}
+
+.leap-intro p {
+  margin: 8px 0 0;
+  color: #e8d9b8;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Bottom-center scroll indicator */
+.leap-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  color: var(--mute);
+  animation: leapBob 2.2s infinite ease-in-out;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, opacity;
+  transition: opacity 0.3s ease;
+  z-index: 4;
+}
+
+@keyframes leapBob {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 8px);
+  }
+}
+
+/* Climax warm light flash at end of fall */
+.leap-flash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, #ff7a1a, #7a1500 60%, #07070a);
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+  z-index: 5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .leap-go {
+    bottom: 20vh;
+    font-size: clamp(44px, 12vw, 84px);
+  }
+  .leap-fall {
+    font-size: clamp(44px, 12vw, 84px);
+  }
+  .leap-intro {
+    bottom: 56px;
+    max-width: calc(100vw - 40px);
+  }
+  .leap-intro p {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+  .leap-hint {
+    bottom: 14px;
+    font-size: 11px;
+  }
+  .leap-fig {
+    left: 58%;
+    width: clamp(70px, 16vw, 110px);
+  }
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .leap-hint {
+    animation: none;
+  }
+  .leap-fig {
+    transform: none !important;
+  }
+  .leap-fall,
+  .leap-go,
+  .leap-beam,
+  .leap-flash {
+    transition: none !important;
+  }
+}

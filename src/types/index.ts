@@ -73,3 +73,4 @@ export interface PortfolioData {
     channels: ContactChannel[];
   };
 }
+

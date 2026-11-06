@@ -6,6 +6,7 @@ import { ScrollProgressBar } from './components/foundation/ScrollProgressBar';
 import { ParticleCanvas } from './components/foundation/ParticleCanvas';
 import { CursorPeek } from './components/foundation/CursorPeek';
 import { Container } from './components/foundation/Container';
+import { TheLeap } from './components/sections/TheLeap';
 import { useIntersectionReveal } from './hooks/useIntersectionReveal';
 
 export const App: React.FC = () => {
@@ -42,24 +43,24 @@ export const App: React.FC = () => {
         items={navigation}
       />
 
-      {/* 3. Foundation Stage (Placeholder ready for Section-by-Section build) */}
-      <main style={{ minHeight: '100vh', position: 'relative', zIndex: 2 }}>
+      {/* 3. Section 1: The Leap (Full-screen Cinematic Hero Experience) */}
+      <TheLeap />
+
+      {/* 4. Section 1 Completion Anchor & Boundary */}
+      <main style={{ position: 'relative', zIndex: 2, background: 'var(--bg)' }}>
         <section
           style={{
-            minHeight: '80vh',
-            display: 'flex',
-            alignItems: 'center',
-            paddingTop: 'calc(var(--header-height) + 40px)',
-            paddingBottom: '60px'
+            padding: '80px 0 100px',
+            borderTop: '1px solid var(--line-light)'
           }}
         >
           <Container>
-            <div className="rv on" style={{ maxWidth: '900px' }}>
+            <div className="rv on" style={{ maxWidth: '800px' }}>
               <div
                 className="sm"
                 style={{
                   color: 'var(--gold)',
-                  marginBottom: '16px',
+                  marginBottom: '14px',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px'
@@ -75,160 +76,45 @@ export const App: React.FC = () => {
                     boxShadow: '0 0 10px var(--fire)'
                   }}
                 />
-                Phase 1 Foundation Initialized · Ready For Section Build
+                Section 1 Verified · "The Leap"
               </div>
 
-              <h1 className="big" style={{ margin: '0 0 24px' }}>
-                {identity.shortName}
-              </h1>
-
-              <div
-                className="ser"
+              <h2
+                className="big"
                 style={{
-                  color: 'var(--gold)',
-                  marginBottom: '20px',
-                  fontSize: 'clamp(24px, 3.5vw, 42px)'
+                  margin: '0 0 16px',
+                  fontSize: 'clamp(32px, 6vw, 72px)'
                 }}
               >
-                {identity.name}
-              </div>
+                The Fall Concludes
+              </h2>
 
               <p
                 style={{
-                  fontSize: 'clamp(17px, 2vw, 22px)',
-                  lineHeight: 1.5,
+                  fontSize: 'clamp(16px, 1.8vw, 19px)',
+                  lineHeight: 1.6,
                   color: '#cfc8ba',
-                  maxWidth: '720px',
-                  marginBottom: '40px'
+                  marginBottom: '28px'
                 }}
               >
-                {identity.bioStatement}
+                The opening scroll-controlled descent of "The Leap" is complete. As you scroll down from the top,
+                the figure tumbles through the golden light beam, typography dissolves, and the radiant warm climax
+                lights the threshold.
               </p>
 
-              {/* Foundation Token Verification Palette */}
-              <div
-                style={{
-                  padding: '28px',
-                  border: '1px solid var(--line)',
-                  borderRadius: '12px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.02)',
-                  backdropFilter: 'blur(8px)',
-                  marginBottom: '36px'
-                }}
-              >
-                <div className="sm" style={{ marginBottom: '16px', color: 'var(--mute)' }}>
-                  Active Design Tokens & Foundations
-                </div>
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-                    gap: '12px',
-                    marginBottom: '20px'
-                  }}
-                >
-                  <div
-                    data-peek="Fire"
-                    style={{
-                      padding: '12px',
-                      background: 'var(--fire)',
-                      color: '#fff',
-                      borderRadius: '6px',
-                      fontSize: '12px',
-                      fontWeight: 700,
-                      cursor: 'default'
-                    }}
-                  >
-                    --fire (#ff5a0a)
-                  </div>
-                  <div
-                    data-peek="Gold"
-                    style={{
-                      padding: '12px',
-                      background: 'var(--gold)',
-                      color: '#000',
-                      borderRadius: '6px',
-                      fontSize: '12px',
-                      fontWeight: 700,
-                      cursor: 'default'
-                    }}
-                  >
-                    --gold (#ffb52e)
-                  </div>
-                  <div
-                    data-peek="Yellow"
-                    style={{
-                      padding: '12px',
-                      background: 'var(--yel)',
-                      color: '#000',
-                      borderRadius: '6px',
-                      fontSize: '12px',
-                      fontWeight: 700,
-                      cursor: 'default'
-                    }}
-                  >
-                    --yel (#f5e642)
-                  </div>
-                  <div
-                    data-peek="Blue"
-                    style={{
-                      padding: '12px',
-                      background: 'var(--blue)',
-                      color: '#fff',
-                      borderRadius: '6px',
-                      fontSize: '12px',
-                      fontWeight: 700,
-                      cursor: 'default'
-                    }}
-                  >
-                    --blue (#4c6fff)
-                  </div>
-                  <div
-                    data-peek="Ink"
-                    style={{
-                      padding: '12px',
-                      background: 'var(--ink)',
-                      color: '#07070a',
-                      borderRadius: '6px',
-                      fontSize: '12px',
-                      fontWeight: 700,
-                      cursor: 'default'
-                    }}
-                  >
-                    --ink (#f3efe6)
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: '10px',
-                    alignItems: 'center'
-                  }}
-                >
-                  <span className="tag">Archivo (Display & Sans)</span>
-                  <span className="tag">Instrument Serif (Italic)</span>
-                  <span className="tag">60 FPS Particle Canvas</span>
-                  <span className="tag">Interactive Cursor Peek</span>
-                  <span className="tag">Smooth Scroll Engine</span>
-                  <span className="tag">Safe-Area Responsive</span>
-                </div>
-              </div>
-
-              <div className="note" style={{ maxWidth: '640px' }}>
-                Architecture, global styling system, design tokens, typography, and interactive foundation components are primed. Awaiting instruction to begin Section 1: "The Leap" opening sequence.
+              <div className="note" style={{ maxWidth: '620px' }}>
+                Awaiting your evaluation of Section 1 before proceeding to Section 2 ("The Noise").
               </div>
             </div>
           </Container>
         </section>
       </main>
 
-      {/* 4. Semantic Footer */}
+      {/* 5. Semantic Footer */}
       <footer
         style={{
           background: '#0a0a0a',
-          padding: '30px 0 50px',
+          padding: '28px 0 44px',
           color: 'var(--mute)',
           fontSize: '13px',
           position: 'relative',
@@ -248,7 +134,7 @@ export const App: React.FC = () => {
           >
             <span>© 2026 Basireddy Yashwanth Reddy · Hyderabad, Telangana</span>
             <span className="sm" style={{ color: 'var(--mute)', textTransform: 'none' }}>
-              Phase 1 · Foundation Ready
+              Section 1: The Leap
             </span>
           </div>
         </Container>
