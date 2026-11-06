@@ -16,9 +16,17 @@ export interface ProjectItem {
 }
 
 export interface CareerRole {
+  id: string;
   title: string;
   subtitle: string;
   peekLabel: string;
+}
+
+export interface OpenToSectionData {
+  intro: string;
+  roles: CareerRole[];
+  interests: string[];
+  closing: string;
 }
 
 export interface StatItem {
@@ -57,6 +65,7 @@ export interface PortfolioData {
   };
   projects: ProjectItem[];
   careerRoles: CareerRole[];
+  openToData: OpenToSectionData;
   riseQuotes: string[];
   stats: StatItem[];
   internship: {

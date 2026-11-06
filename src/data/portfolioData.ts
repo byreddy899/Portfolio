@@ -66,12 +66,30 @@ export const portfolioData: PortfolioData = {
     }
   ],
   careerRoles: [
-    { title: 'Software Developer', subtitle: 'Build and ship applications', peekLabel: 'Software' },
-    { title: 'Software Development Engineer', subtitle: 'SDE roles', peekLabel: 'SDE' },
-    { title: 'Data Scientist', subtitle: 'Data, models, insight', peekLabel: 'Data' },
-    { title: 'Machine Learning Engineer', subtitle: 'Models in production', peekLabel: 'ML' },
-    { title: 'AI Engineer', subtitle: 'Agents and GenAI', peekLabel: 'AI' }
+    { id: '01', title: 'Software Developer', subtitle: 'Build and ship applications', peekLabel: 'Software' },
+    { id: '02', title: 'Software Development Engineer (SDE)', subtitle: 'SDE roles', peekLabel: 'SDE' },
+    { id: '03', title: 'Data Scientist', subtitle: 'Data, models, insight', peekLabel: 'Data' },
+    { id: '04', title: 'Machine Learning Engineer', subtitle: 'Models in production', peekLabel: 'ML' },
+    { id: '05', title: 'AI Engineer', subtitle: 'Agents and GenAI', peekLabel: 'AI' }
   ],
+  openToData: {
+    intro: 'Curious by nature. Ready to build, learn, and contribute.',
+    roles: [
+      { id: '01', title: 'Software Developer', subtitle: 'Build and ship applications', peekLabel: 'Software' },
+      { id: '02', title: 'Software Development Engineer (SDE)', subtitle: 'SDE roles', peekLabel: 'SDE' },
+      { id: '03', title: 'Data Scientist', subtitle: 'Data, models, insight', peekLabel: 'Data' },
+      { id: '04', title: 'Machine Learning Engineer', subtitle: 'Models in production', peekLabel: 'ML' },
+      { id: '05', title: 'AI Engineer', subtitle: 'Agents and GenAI', peekLabel: 'AI' }
+    ],
+    interests: [
+      'Software Development',
+      'Artificial Intelligence',
+      'Machine Learning',
+      'Data Science',
+      'Full-Stack Development'
+    ],
+    closing: 'Always open to meaningful opportunities, collaborations, and challenging problems.'
+  },
   riseQuotes: [
     'Every fall needs a way out.',
     'Some doors only open from the inside.',

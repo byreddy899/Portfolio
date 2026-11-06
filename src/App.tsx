@@ -88,7 +88,7 @@ export const App: React.FC = () => {
                     boxShadow: '0 0 10px var(--fire)'
                   }}
                 />
-                Task 5 Complete · "Open To" Active
+                Task 5 Complete · "Open To" Verified
               </div>
 
               <h2
@@ -98,7 +98,7 @@ export const App: React.FC = () => {
                   fontSize: 'clamp(32px, 6vw, 68px)'
                 }}
               >
-                Open To Verified
+                Next Up: Rise
               </h2>
 
               <p
@@ -109,8 +109,7 @@ export const App: React.FC = () => {
                   marginBottom: '28px'
                 }}
               >
-                The career opportunities section is live with full-row ivory inversion hover states,
-                interactive title translation, and cursor peek lens tags.
+                The "Open To" section is live with all 5 numbered roles, subtle border separators, gold highlight hover effects, animated arrow indicators, interest tags, and closing editorial statement.
               </p>
 
               <div className="note" style={{ maxWidth: '620px' }}>

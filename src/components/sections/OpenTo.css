@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Section 4: Open To — Career Opportunities & Interactive Inversion
+   Section 4: Open To — Career Opportunities & Professional Focus
    ========================================================================== */
 
 #opento {
@@ -11,18 +11,29 @@
 
 #opento h2 {
   margin-top: 0;
-  margin-bottom: clamp(28px, 5vw, 60px);
+  margin-bottom: clamp(14px, 2.5vw, 24px);
 }
 
+.open-to-intro {
+  margin-top: 0;
+  margin-bottom: clamp(36px, 5vw, 64px);
+  color: var(--ink);
+  font-size: clamp(22px, 3.2vw, 38px);
+  max-width: 32ch;
+  line-height: 1.3;
+}
+
+/* Subtle separator list */
 .open-to-list {
   display: flex;
   flex-direction: column;
+  margin-bottom: clamp(48px, 7vw, 90px);
 }
 
 .open-to-row {
   border-top: 1px solid var(--line);
   position: relative;
-  transition: background-color 0.3s ease, padding 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .open-to-row:last-child {
@@ -33,63 +44,128 @@
   all: unset;
   box-sizing: border-box;
   width: 100%;
-  cursor: default;
-  display: block;
-  padding: clamp(16px, 2vw, 26px) 12px;
-  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: clamp(20px, 3vw, 36px) 0;
+  transition: padding 0.35s ease;
 }
 
 .open-to-btn:focus-visible {
   outline: 2px solid var(--gold);
-  outline-offset: 3px;
+  outline-offset: 4px;
+}
+
+.open-to-left {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(14px, 2.5vw, 28px);
+  flex-wrap: wrap;
+}
+
+.open-to-num {
+  font-family: var(--sans);
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 700;
+  color: var(--mute);
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
 }
 
 .open-to-row h3 {
   font-family: var(--sans);
   font-weight: 900;
-  font-size: clamp(26px, 4.6vw, 60px);
+  font-size: clamp(24px, 4.2vw, 56px);
   line-height: 1.1;
   font-stretch: 125%;
   text-transform: uppercase;
   margin: 0;
   color: var(--ink);
-  transition: color 0.3s ease, transform 0.35s ease;
+  transition: color 0.35s ease, transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: transform, color;
 }
 
-.open-to-row small {
-  display: block;
+/* Animated Arrow Indicator */
+.open-to-arrow {
   font-family: var(--sans);
-  font-weight: 500;
-  font-size: 14px;
+  font-size: clamp(24px, 3.2vw, 38px);
+  font-weight: 700;
   color: var(--mute);
-  text-transform: none;
-  margin-top: 6px;
-  transition: color 0.3s ease;
+  opacity: 0.35;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    color 0.3s ease,
+    opacity 0.3s ease;
+  user-select: none;
 }
 
-/* Dramatic Inversion State on Hover */
+/* Hover Dynamics */
 .open-to-row:hover {
-  background-color: var(--ink);
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
 .open-to-row:hover h3 {
-  color: #0a0a0a;
-  transform: translateX(10px);
+  color: var(--gold);
+  transform: translateX(12px);
 }
 
-.open-to-row:hover small {
-  color: #333333;
+.open-to-row:hover .open-to-num {
+  color: var(--fire);
+}
+
+.open-to-row:hover .open-to-arrow {
+  transform: translateX(8px);
+  color: var(--fire);
+  opacity: 1;
+}
+
+/* Supporting Content: Interested In */
+.open-to-supporting {
+  padding-top: clamp(20px, 3vw, 40px);
+  border-top: 1px solid var(--line-light);
+}
+
+.open-to-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-bottom: clamp(32px, 5vw, 54px);
+}
+
+.open-to-tags .tag {
+  font-size: clamp(12px, 1.4vw, 14px);
+  padding: 6px 16px;
+  border-color: rgba(255, 181, 46, 0.6);
+  color: #ffca60;
+  background: rgba(255, 181, 46, 0.04);
+  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.open-to-tags .tag:hover {
+  border-color: var(--fire);
+  color: #ffffff;
+  background: rgba(255, 90, 10, 0.15);
+}
+
+/* Closing Line */
+.open-to-closing {
+  font-size: clamp(20px, 2.8vw, 34px);
+  color: var(--mute);
+  max-width: 36ch;
+  line-height: 1.35;
+  margin: 0;
 }
 
 /* Accessibility: prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
-  .open-to-row {
+  .open-to-row h3,
+  .open-to-arrow,
+  .open-to-num {
     transition: none !important;
   }
-  .open-to-row h3 {
-    transition: none !important;
-  }
-  .open-to-row:hover h3 {
+  .open-to-row:hover h3,
+  .open-to-row:hover .open-to-arrow {
     transform: none !important;
   }
 }
