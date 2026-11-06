@@ -1,90 +1,148 @@
 import React, { useState } from 'react';
-import { portfolioData } from '../../data/portfolioData';
 import { Container } from '../foundation/Container';
 import './Contact.css';
 
 export const Contact: React.FC = () => {
-  const { contact } = portfolioData;
-  const [copiedKey, setCopiedKey] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+  const email = 'byreddy899@gmail.com';
 
-  const handleCopy = async (value: string, key: string) => {
+  const handleCopyEmail = async (e: React.MouseEvent) => {
+    e.preventDefault();
     try {
-      await navigator.clipboard.writeText(value);
-      setCopiedKey(key);
-      setTimeout(() => {
-        setCopiedKey(null);
-      }, 1400);
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1600);
     } catch {
       // Fallback if clipboard API is unavailable
       const textArea = document.createElement('textarea');
-      textArea.value = value;
+      textArea.value = email;
       document.body.appendChild(textArea);
       textArea.select();
       document.execCommand('copy');
       document.body.removeChild(textArea);
-      setCopiedKey(key);
-      setTimeout(() => {
-        setCopiedKey(null);
-      }, 1400);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1600);
     }
   };
 
+  const handleScrollToTop = () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth'
+    });
+  };
+
   return (
-    <section id="contact" className="sec" aria-label="Contact Information">
+    <section id="contact" className="contact-sec" aria-label="Contact and Conclusion">
       <Container>
-        {/* Poetic Opening Callout */}
-        <p className="ser contact-lead rv">
-          {contact.heading}
-        </p>
-
-        {/* Oversized Email Display */}
-        <a
-          className="contact-email-link"
-          href={`mailto:${contact.email}`}
-          aria-label={`Send email to ${contact.email}`}
-        >
-          <div className="big contact-big rv">
-            {contact.email}
+        {/* 1. Header with Oversized Editorial Typography */}
+        <div className="contact-header rv">
+          <div className="contact-label-tag sm">
+            DROP ME A MESSAGE
           </div>
-        </a>
 
-        {/* Contact Channels Grid */}
-        <div className="contact-channels" id="cr">
-          {contact.channels.map((channel) => {
-            const isCopied = copiedKey === channel.label;
-            const isExternal = channel.href.startsWith('http');
+          <h2 className="contact-title big">
+            LET'S BUILD <em className="contact-serif">SOMETHING.</em>
+          </h2>
 
-            return (
-              <div key={channel.label} className="contact-row rv">
-                <span className="sm">{channel.label}</span>
-
-                <a
-                  className="contact-link"
-                  href={channel.href}
-                  target={isExternal ? '_blank' : undefined}
-                  rel={isExternal ? 'noopener noreferrer' : undefined}
-                >
-                  {channel.value}
-                </a>
-
-                {channel.copyable ? (
-                  <button
-                    type="button"
-                    className={`contact-copy-btn ${isCopied ? 'copied' : ''}`}
-                    onClick={() => handleCopy(channel.value, channel.label)}
-                    aria-label={`Copy ${channel.label} ${channel.value}`}
-                  >
-                    {isCopied ? 'Copied' : 'Copy'}
-                  </button>
-                ) : (
-                  <span />
-                )}
-              </div>
-            );
-          })}
+          <p className="contact-subtitle">
+            GOOD THINGS START WITH A <em className="contact-serif">CONVERSATION.</em>
+          </p>
         </div>
+
+        {/* 2. Prominent Email Display with Direct Mailto & Quick Copy */}
+        <div className="contact-email-zone rv">
+          <div className="contact-email-wrapper">
+            <a
+              href={`mailto:${email}`}
+              className="contact-email-link"
+              aria-label={`Send an email to ${email}`}
+              data-peek="Write"
+            >
+              <span className="contact-email-text">{email}</span>
+              <span className="contact-email-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <button
+              type="button"
+              onClick={handleCopyEmail}
+              className={`contact-copy-pill ${copied ? 'copied' : ''}`}
+              aria-label="Copy email address to clipboard"
+            >
+              {copied ? 'Copied to Clipboard' : 'Copy Email'}
+            </button>
+          </div>
+        </div>
+
+        {/* 3. Verified Social Channels */}
+        <div className="contact-channels-zone rv">
+          <div className="contact-channels-header sm">
+            <span>Direct Channels</span>
+            <span>External Profiles</span>
+          </div>
+
+          <div className="contact-channels-list">
+            {/* GitHub */}
+            <div className="contact-channel-row">
+              <span className="channel-index sm">01 / GITHUB</span>
+              <a
+                href="https://github.com/byreddy899"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="channel-link"
+                aria-label="Visit Basireddy Yashwanth Reddy's GitHub profile (opens in new tab)"
+                data-peek="GitHub"
+              >
+                <span className="channel-value">github.com/byreddy899</span>
+                <span className="channel-arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            {/* LinkedIn */}
+            <div className="contact-channel-row">
+              <span className="channel-index sm">02 / LINKEDIN</span>
+              <a
+                href="https://www.linkedin.com/in/basireddy-yashwanth-reddy-575b1a3a4/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="channel-link"
+                aria-label="Visit Basireddy Yashwanth Reddy's LinkedIn profile (opens in new tab)"
+                data-peek="LinkedIn"
+              >
+                <span className="channel-value">linkedin.com/in/basireddy-yashwanth-reddy</span>
+                <span className="channel-arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* 4. Semantic Editorial Footer */}
+        <footer className="contact-footer rv">
+          <div className="footer-main">
+            <div className="footer-identity">
+              <div className="footer-author">Basireddy Yashwanth Reddy</div>
+              <div className="footer-role">Computer Science Undergraduate · Hyderabad, India</div>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleScrollToTop}
+              className="back-to-top-btn"
+              aria-label="Scroll smoothly back to the top of the portfolio"
+              data-peek="Top"
+            >
+              BACK TO TOP ↑
+            </button>
+          </div>
+
+          <div className="footer-bottom">
+            <p className="copyright-text">
+              © 2026 Basireddy Yashwanth Reddy. Built with curiosity.
+            </p>
+          </div>
+        </footer>
       </Container>
     </section>
   );
 };
-

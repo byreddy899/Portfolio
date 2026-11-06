@@ -1,124 +1,343 @@
 /* ==========================================================================
-   Section 8: Contact — Electric Contrast & Interactive Channels
+   Section 8: Contact — Electric Climax & Direct Channels
    ========================================================================== */
 
-#contact {
-  background-color: var(--yel);
-  color: #0a0a0a;
+.contact-sec {
+  background-color: #f5e642;
+  color: #07070a;
   position: relative;
   z-index: 2;
-  padding: clamp(80px, 11vw, 150px) 0;
+  padding: clamp(90px, 12vw, 170px) 0 clamp(40px, 6vw, 70px);
+  overflow: hidden;
 }
 
-.contact-lead {
+/* ==========================================================================
+   1. Header with Oversized Editorial Typography
+   ========================================================================== */
+
+.contact-header {
+  margin-bottom: clamp(48px, 7vw, 88px);
+}
+
+.contact-label-tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #07070a;
+  background: rgba(7, 7, 10, 0.08);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+.contact-title {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(38px, 8.5vw, 130px);
+  line-height: 0.94;
+  font-stretch: 125%;
+  text-transform: uppercase;
+  letter-spacing: -0.035em;
+  color: #07070a;
+  margin: 0 0 clamp(16px, 2.5vw, 28px);
+  word-break: break-word;
+}
+
+.contact-serif {
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(24px, 3.2vw, 40px);
-  margin: 0 0 20px;
-  color: #0a0a0a;
+  text-transform: none;
+  letter-spacing: normal;
+  padding-left: 0.05em;
+}
+
+.contact-subtitle {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: clamp(18px, 3vw, 34px);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  color: #1a1914;
+  margin: 0;
+  max-width: 900px;
+}
+
+/* ==========================================================================
+   2. Prominent Email Display with Direct Mailto & Quick Copy
+   ========================================================================== */
+
+.contact-email-zone {
+  margin-bottom: clamp(52px, 8vw, 100px);
+  padding-bottom: clamp(36px, 5vw, 60px);
+  border-bottom: 2px solid rgba(7, 7, 10, 0.2);
+}
+
+.contact-email-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px 32px;
 }
 
 .contact-email-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
   text-decoration: none;
-  color: #0a0a0a;
-  display: block;
+  color: #07070a;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.contact-big {
+.contact-email-text {
   font-family: var(--sans);
   font-weight: 900;
-  font-size: clamp(34px, 9vw, 140px);
-  line-height: 0.95;
-  font-stretch: 125%;
-  text-transform: uppercase;
+  font-size: clamp(26px, 5.8vw, 84px);
+  line-height: 1;
   letter-spacing: -0.03em;
-  word-break: break-word;
-  color: #0a0a0a;
-  transition: opacity 0.25s ease;
+  word-break: break-all;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.25s ease;
 }
 
-.contact-email-link:hover .contact-big {
-  opacity: 0.85;
-}
-
-/* Channels List */
-.contact-channels {
-  margin-top: clamp(36px, 5vw, 60px);
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-row {
-  display: grid;
-  grid-template-columns: 130px 1fr auto;
-  gap: 16px;
-  align-items: center;
-  padding: 16px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-.contact-row:last-child {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-.contact-row .sm {
-  color: #4a4500;
-}
-
-.contact-link {
+.contact-email-arrow {
   font-family: var(--sans);
   font-weight: 700;
-  font-size: clamp(18px, 2.4vw, 28px);
-  color: #0a0a0a;
-  text-decoration: none;
-  overflow-wrap: anywhere;
-  transition: opacity 0.2s ease;
+  font-size: clamp(24px, 4.5vw, 64px);
+  line-height: 1;
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-.contact-link:hover {
-  text-decoration: underline;
-  opacity: 0.85;
+.contact-email-link:hover .contact-email-text {
+  border-color: #07070a;
 }
 
-/* Copy Button */
-.contact-copy-btn {
+.contact-email-link:hover .contact-email-arrow {
+  transform: translate(6px, -6px);
+}
+
+.contact-copy-pill {
   font-family: var(--sans);
-  font-weight: 700;
-  font-size: 12px;
-  background-color: #0a0a0a;
-  color: var(--yel);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  background-color: #07070a;
+  color: #f5e642;
   border: none;
-  border-radius: 99px;
-  padding: 8px 18px;
+  border-radius: 999px;
+  padding: 12px 24px;
   cursor: pointer;
-  letter-spacing: 0.04em;
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  white-space: nowrap;
 }
 
-.contact-copy-btn:hover {
+.contact-copy-pill:hover {
   transform: scale(1.05);
-  background-color: #1a1a1a;
+  background-color: #1a1a22;
+  box-shadow: 0 6px 20px rgba(7, 7, 10, 0.2);
 }
 
-.contact-copy-btn:focus-visible {
-  outline: 2px solid #0a0a0a;
+.contact-copy-pill:focus-visible {
+  outline: 2px solid #07070a;
   outline-offset: 3px;
 }
 
-.contact-copy-btn.copied {
+.contact-copy-pill.copied {
   background-color: var(--fire);
   color: #ffffff;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .contact-row {
-    grid-template-columns: 1fr auto;
-    gap: 8px 16px;
-  }
-  .contact-row .sm {
-    grid-column: 1 / -1;
+/* ==========================================================================
+   3. Verified Social Channels
+   ========================================================================== */
+
+.contact-channels-zone {
+  margin-bottom: clamp(60px, 9vw, 110px);
+}
+
+.contact-channels-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(7, 7, 10, 0.2);
+  color: #4a4500;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-channels-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-channel-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: clamp(18px, 2.5vw, 26px) 0;
+  border-bottom: 1px solid rgba(7, 7, 10, 0.18);
+  transition: padding-left 0.3s ease;
+}
+
+@media (max-width: 680px) {
+  .contact-channel-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 16px 0;
   }
 }
 
+.contact-channel-row:hover {
+  padding-left: 10px;
+}
+
+.channel-index {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 12px;
+  color: #4a4500;
+  letter-spacing: 0.1em;
+}
+
+.channel-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: clamp(18px, 2.5vw, 30px);
+  color: #07070a;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.channel-arrow {
+  font-size: clamp(18px, 2vw, 26px);
+  line-height: 1;
+  color: #07070a;
+  margin-left: 12px;
+  transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.channel-link:hover .channel-value {
+  text-decoration: underline;
+}
+
+.channel-link:hover .channel-arrow {
+  transform: translate(4px, -4px);
+}
+
+.channel-link:focus-visible {
+  outline: 2px solid #07070a;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   4. Semantic Editorial Footer
+   ========================================================================== */
+
+.contact-footer {
+  padding-top: clamp(32px, 5vw, 56px);
+  border-top: 2px solid rgba(7, 7, 10, 0.25);
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.footer-author {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(20px, 2.4vw, 26px);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #07070a;
+  margin-bottom: 4px;
+}
+
+.footer-role {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 14px;
+  color: #3b3700;
+  letter-spacing: 0.02em;
+}
+
+.back-to-top-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 12.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background-color: #07070a;
+  color: #f5e642;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-to-top-btn:hover {
+  transform: translateY(-2px);
+  background-color: #1a1a22;
+  box-shadow: 0 6px 18px rgba(7, 7, 10, 0.2);
+}
+
+.back-to-top-btn:focus-visible {
+  outline: 2px solid #07070a;
+  outline-offset: 3px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(7, 7, 10, 0.12);
+}
+
+.copyright-text {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a4500;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+/* ==========================================================================
+   Accessibility & Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-email-arrow,
+  .channel-arrow,
+  .contact-copy-pill,
+  .back-to-top-btn,
+  .contact-channel-row {
+    transition: none !important;
+  }
+}
