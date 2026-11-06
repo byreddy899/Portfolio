@@ -12,15 +12,13 @@ import { SelectedWork } from './components/sections/SelectedWork';
 import { OpenTo } from './components/sections/OpenTo';
 import { Rise } from './components/sections/Rise';
 import { About } from './components/sections/About';
-import { ThePortal } from './components/sections/ThePortal';
-import { Contact } from './components/sections/Contact';
 import { useIntersectionReveal } from './hooks/useIntersectionReveal';
 
 export const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { identity, navigation } = portfolioData;
 
-  // Initialize intersection observer for scroll-reveal (.rv) animations
+  // Initialize intersection observer for reveal classes
   useIntersectionReveal('.rv');
 
   const toggleMenu = () => {
@@ -33,12 +31,12 @@ export const App: React.FC = () => {
 
   return (
     <>
-      {/* 1. Global Interactive Foundation Layers */}
+      {/* 1. Global Interactive Foundation Layer */}
       <ScrollProgressBar />
       <ParticleCanvas />
       <CursorPeek />
 
-      {/* 2. Fixed Top Navigation & Fullscreen Animated Menu */}
+      {/* 2. Top Navigation & Fullscreen Menu */}
       <Navbar
         authorName={identity.shortName}
         isMenuOpen={isMenuOpen}
@@ -50,38 +48,91 @@ export const App: React.FC = () => {
         items={navigation}
       />
 
-      {/* 3. Section 1: The Leap (Scroll-controlled Opening Sequence) */}
+      {/* 3. Section 1: The Leap (Hero Section) */}
       <TheLeap />
 
-      {/* 4. Main Portfolio Narrative Flow */}
-      <main style={{ position: 'relative', zIndex: 2 }}>
-        {/* Section 2: The Noise (Technology Marquees & Solar Orb) */}
-        <TheNoise />
+      {/* 4. Section 2: The Noise (Skills Section) */}
+      <TheNoise />
 
-        {/* Section 3: Selected Work (Expandable Project Accordions) */}
-        <SelectedWork />
+      {/* 5. Section 3: Selected Work (Projects Section) */}
+      <SelectedWork />
 
-        {/* Section 4: Open To (Career Roles & Interests) */}
-        <OpenTo />
+      {/* 6. Section 4: Open To (Career Opportunities Section) */}
+      <OpenTo />
 
-        {/* Section 5: Rise (Scroll-driven Ascent Scene) */}
-        <Rise />
+      {/* 7. Section 5: Rise (Scroll-driven Ascent Scene) */}
+      <Rise />
 
-        {/* Section 6: About (Academic Highlights & Narrative) */}
-        <About />
+      {/* 8. Section 6: About (Personal Profile Section) */}
+      <About />
 
-        {/* Section 7: The Portal (Architectural Gate & Credentials) */}
-        <ThePortal />
+      {/* 9. Task 7 Completion Boundary */}
+      <main style={{ position: 'relative', zIndex: 2, background: 'var(--bg)' }}>
+        <section
+          style={{
+            padding: '70px 0 90px',
+            borderTop: '1px solid var(--line-light)'
+          }}
+        >
+          <Container>
+            <div className="rv on" style={{ maxWidth: '800px' }}>
+              <div
+                className="sm"
+                style={{
+                  color: 'var(--gold)',
+                  marginBottom: '14px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}
+              >
+                <span
+                  style={{
+                    display: 'inline-block',
+                    width: '8px',
+                    height: '8px',
+                    borderRadius: '50%',
+                    backgroundColor: 'var(--fire)',
+                    boxShadow: '0 0 10px var(--fire)'
+                  }}
+                />
+                Task 7 Complete · "About" Verified
+              </div>
 
-        {/* Section 8: Contact (High-Contrast Electric Callout & Channels) */}
-        <Contact />
+              <h2
+                className="big"
+                style={{
+                  margin: '0 0 16px',
+                  fontSize: 'clamp(32px, 6vw, 68px)'
+                }}
+              >
+                About Section Live
+              </h2>
+
+              <p
+                style={{
+                  fontSize: 'clamp(16px, 1.8vw, 19px)',
+                  lineHeight: 1.6,
+                  color: '#cfc8ba',
+                  marginBottom: '28px'
+                }}
+              >
+                "The Person Behind The Code" is live with your full introduction, educational timeline (B.Tech, Intermediate, SSC), expressive typography interests cloud, location, and languages.
+              </p>
+
+              <div className="note" style={{ maxWidth: '620px' }}>
+                Awaiting your evaluation of Task 7 before proceeding to the next section.
+              </div>
+            </div>
+          </Container>
+        </section>
       </main>
 
-      {/* 5. Semantic Footer */}
+      {/* 10. Semantic Footer */}
       <footer
         style={{
           background: '#0a0a0a',
-          padding: '30px 0 50px',
+          padding: '28px 0 44px',
           color: 'var(--mute)',
           fontSize: '13px',
           position: 'relative',
@@ -100,19 +151,9 @@ export const App: React.FC = () => {
             }}
           >
             <span>© 2026 Basireddy Yashwanth Reddy · Hyderabad, Telangana</span>
-            <a
-              href="#leap"
-              style={{
-                color: 'var(--gold)',
-                fontSize: '12px',
-                fontWeight: 600,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                textDecoration: 'none'
-              }}
-            >
-              Back to Top ↑
-            </a>
+            <span className="sm" style={{ color: 'var(--mute)', textTransform: 'none' }}>
+              Sections 1 to 6 Active
+            </span>
           </div>
         </Container>
       </footer>

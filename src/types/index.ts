@@ -34,6 +34,27 @@ export interface StatItem {
   label: string;
 }
 
+export interface EducationItem {
+  degree: string;
+  institution: string;
+  period: string;
+  score: string;
+  metric: string;
+}
+
+export interface AboutSectionData {
+  heading: string;
+  name: string;
+  introParagraphs: string[];
+  education: EducationItem[];
+  interests: string[];
+  personal: {
+    languages: string;
+    location: string;
+    philosophy: string;
+  };
+}
+
 export interface CertificationItem {
   title: string;
   issuer: string;
@@ -74,6 +95,7 @@ export interface PortfolioData {
   riseQuotes: string[];
   riseStory: RiseStoryItem[];
   stats: StatItem[];
+  aboutData: AboutSectionData;
   internship: {
     role: string;
     period: string;
@@ -88,4 +110,3 @@ export interface PortfolioData {
     channels: ContactChannel[];
   };
 }
-

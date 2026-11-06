@@ -106,6 +106,50 @@ export const portfolioData: PortfolioData = {
     { value: '97.7%', label: 'Intermediate MPC · 2022–2024' },
     { value: '9.3', label: 'SSC CGPA · 2022' }
   ],
+  aboutData: {
+    heading: 'THE PERSON BEHIND THE CODE.',
+    name: 'Basireddy Yashwanth Reddy',
+    introParagraphs: [
+      "I'm a Computer Science undergraduate at Vardhaman College of Engineering, interested in building software and exploring the possibilities of AI, Machine Learning, and Data Science.",
+      "I enjoy learning across different areas of technology, experimenting with ideas, and turning concepts into practical projects. I'm curious by nature and believe that growth comes from continuously learning and building."
+    ],
+    education: [
+      {
+        degree: 'B.Tech – Computer Science and Engineering',
+        institution: 'Vardhaman College of Engineering',
+        period: '2024–2028',
+        score: 'Current CGPA: 8.4/10',
+        metric: '8.4'
+      },
+      {
+        degree: 'Intermediate – MPC',
+        institution: 'Pragathi Junior College, Nalgonda',
+        period: '2022–2024',
+        score: 'Percentage: 97.7%',
+        metric: '97.7%'
+      },
+      {
+        degree: 'Secondary School Certificate (SSC)',
+        institution: 'Sri Chaitanya Techno Curriculum School',
+        period: '2022',
+        score: 'CGPA: 9.3/10',
+        metric: '9.3'
+      }
+    ],
+    interests: [
+      'Artificial Intelligence',
+      'Machine Learning',
+      'Data Science',
+      'Software Development',
+      'Full-Stack Development',
+      'Problem Solving'
+    ],
+    personal: {
+      languages: 'English & Telugu',
+      location: 'Hyderabad, Telangana, India',
+      philosophy: 'A jack of all trades, always learning something new. Driven by curiosity and craft.'
+    }
+  },
   internship: {
     role: 'Data Science Intern',
     period: 'Internship · 22 Aug – 22 Sep 2026',
