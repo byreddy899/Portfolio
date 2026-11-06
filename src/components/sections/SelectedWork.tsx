@@ -22,9 +22,10 @@ export const SelectedWork: React.FC = () => {
   return (
     <section id="work" className="sec" aria-label="Selected Work">
       <Container>
+        {/* Oversized Section Heading */}
         <h2 className="big rv">Selected work</h2>
 
-        {/* Project List container carries .rv so the list reveals on scroll */}
+        {/* Project List with Thin Separators & Smooth Accordions */}
         <div id="plist" className="plist rv">
           {projects.map((p) => {
             const isOpen = !!openProjects[p.id];
@@ -36,23 +37,27 @@ export const SelectedWork: React.FC = () => {
                 className={`row ${isOpen ? 'open' : ''}`}
                 data-peek={isOpen ? 'Close' : 'Open'}
               >
+                {/* Accordion Row Header Button */}
                 <button
                   type="button"
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   onClick={() => toggleProject(p.id)}
+                  className="row-toggle-btn"
                 >
-                  <div>
-                    <h3>{p.title}</h3>
-                    <div className="sm" style={{ marginTop: '10px' }}>
-                      {p.subtitle}
-                    </div>
+                  <div className="row-header-content">
+                    <h3 className="project-title">{p.title}</h3>
+                    <div className="project-category sm">{p.subtitle}</div>
                   </div>
-                  <span className="pl" aria-hidden="true">
+                  <span
+                    className={`pl ${isOpen ? 'active' : ''}`}
+                    aria-hidden="true"
+                  >
                     +
                   </span>
                 </button>
 
+                {/* Accordion Expandable Panel */}
                 <div
                   className="bd"
                   id={panelId}
@@ -61,10 +66,10 @@ export const SelectedWork: React.FC = () => {
                 >
                   <div>
                     <div className="in">
-                      {/* Left Column: Description & Highlights */}
-                      <div>
+                      {/* Left Column: Description, Features & Collaborative Attribution */}
+                      <div className="project-main-info">
                         <p className="desc">{p.description}</p>
-                        <ul>
+                        <ul className="project-features">
                           {p.highlights.map((item, idx) => (
                             <li key={idx}>{item}</li>
                           ))}
@@ -72,25 +77,26 @@ export const SelectedWork: React.FC = () => {
                         {p.note && <p className="note">{p.note}</p>}
                       </div>
 
-                      {/* Right Column: Tags & Repo Link */}
-                      <div>
-                        <div className="tags-wrap">
+                      {/* Right Column: Technology Tags & View Repository Button */}
+                      <div className="project-meta-info">
+                        <div className="tags-wrap" aria-label="Technologies Used">
                           {p.tags.map((tag) => (
                             <span key={tag} className="tag">
                               {tag}
                             </span>
                           ))}
                         </div>
-                        <p style={{ margin: '14px 0 0' }}>
+                        <div className="repo-link-wrap">
                           <a
                             className="btn"
                             href={p.repoUrl}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={`View ${p.title} repository on GitHub (opens in new tab)`}
                           >
                             View repository
                           </a>
-                        </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -101,7 +107,7 @@ export const SelectedWork: React.FC = () => {
         </div>
 
         {/* Editorial Subnote */}
-        <p className="ser rv" style={{ marginTop: '36px', color: 'var(--mute)' }}>
+        <p className="ser rv" style={{ marginTop: '40px', color: 'var(--mute)' }}>
           More projects are on the way. This space stays honest until they ship.
         </p>
       </Container>
