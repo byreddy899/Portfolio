@@ -44,17 +44,17 @@ export const App: React.FC = () => {
         items={navigation}
       />
 
-      {/* 3. Section 1: The Leap (Full-screen Cinematic Hero Experience) */}
+      {/* 3. Section 1: The Leap (Hero Section) */}
       <TheLeap />
 
-      {/* 4. Section 2: The Noise (Technology Marquees & Pulsing Solar Orb) */}
+      {/* 4. Section 2: The Noise (Skills Section) */}
       <TheNoise />
 
-      {/* 5. Section 2 Completion Boundary */}
+      {/* 5. Section 2 Boundary */}
       <main style={{ position: 'relative', zIndex: 2, background: 'var(--bg)' }}>
         <section
           style={{
-            padding: '80px 0 100px',
+            padding: '70px 0 90px',
             borderTop: '1px solid var(--line-light)'
           }}
         >
@@ -80,17 +80,17 @@ export const App: React.FC = () => {
                     boxShadow: '0 0 10px var(--fire)'
                   }}
                 />
-                Sections 1 &amp; 2 Verified · "The Leap" + "The Noise"
+                Task 3 Complete · "The Noise" (Skills Section)
               </div>
 
               <h2
                 className="big"
                 style={{
                   margin: '0 0 16px',
-                  fontSize: 'clamp(32px, 6vw, 72px)'
+                  fontSize: 'clamp(32px, 6vw, 68px)'
                 }}
               >
-                Next Up: Selected Work
+                The Noise Active
               </h2>
 
               <p
@@ -101,14 +101,12 @@ export const App: React.FC = () => {
                   marginBottom: '28px'
                 }}
               >
-                "The Noise" multi-speed kinetic marquees, alternating direction shifts, interactive hover lighting,
-                pulsing solar orb, and circular rotating tech ring are live.
-                The next section is <strong>"Selected Work"</strong> featuring expandable project details, tech tags,
-                and repository links.
+                The continuous alternating marquees, category-colored hover illumination, interactive row hover-pausing,
+                glowing central solar orb, and circular rotating tech ring are live and running smoothly.
               </p>
 
               <div className="note" style={{ maxWidth: '620px' }}>
-                Awaiting your evaluation of Section 2 before implementing Section 3 ("Selected Work").
+                Awaiting your evaluation of Task 3 before proceeding to the next section.
               </div>
             </div>
           </Container>
@@ -139,7 +137,7 @@ export const App: React.FC = () => {
           >
             <span>© 2026 Basireddy Yashwanth Reddy · Hyderabad, Telangana</span>
             <span className="sm" style={{ color: 'var(--mute)', textTransform: 'none' }}>
-              The Leap &amp; The Noise Active
+              Sections 1 &amp; 2 Active
             </span>
           </div>
         </Container>
