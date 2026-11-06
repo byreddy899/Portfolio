@@ -12,6 +12,7 @@ import { SelectedWork } from './components/sections/SelectedWork';
 import { OpenTo } from './components/sections/OpenTo';
 import { Rise } from './components/sections/Rise';
 import { About } from './components/sections/About';
+import { ThePortal } from './components/sections/ThePortal';
 import { useIntersectionReveal } from './hooks/useIntersectionReveal';
 
 export const App: React.FC = () => {
@@ -66,7 +67,10 @@ export const App: React.FC = () => {
       {/* 8. Section 6: About (Personal Profile Section) */}
       <About />
 
-      {/* 9. Task 7 Completion Boundary */}
+      {/* 9. Section 7: The Portal (Architectural Gate & Credentials) */}
+      <ThePortal />
+
+      {/* 10. Task 8 Completion Boundary */}
       <main style={{ position: 'relative', zIndex: 2, background: 'var(--bg)' }}>
         <section
           style={{
@@ -96,7 +100,7 @@ export const App: React.FC = () => {
                     boxShadow: '0 0 10px var(--fire)'
                   }}
                 />
-                Task 7 Complete · "About" Verified
+                Task 8 Complete · "The Portal" Verified
               </div>
 
               <h2
@@ -106,7 +110,7 @@ export const App: React.FC = () => {
                   fontSize: 'clamp(32px, 6vw, 68px)'
                 }}
               >
-                About Section Live
+                Next Up: Contact
               </h2>
 
               <p
@@ -117,18 +121,18 @@ export const App: React.FC = () => {
                   marginBottom: '28px'
                 }}
               >
-                "The Person Behind The Code" is live with your full introduction, educational timeline (B.Tech, Intermediate, SSC), expressive typography interests cloud, location, and languages.
+                The Portal section is live with the glowing arch gate, YR monogram artifact, Decode Labs internship card, and certifications list.
               </p>
 
               <div className="note" style={{ maxWidth: '620px' }}>
-                Awaiting your evaluation of Task 7 before proceeding to the next section.
+                Awaiting your evaluation of Task 8 before proceeding to the final section ("Contact").
               </div>
             </div>
           </Container>
         </section>
       </main>
 
-      {/* 10. Semantic Footer */}
+      {/* 11. Semantic Footer */}
       <footer
         style={{
           background: '#0a0a0a',
@@ -152,7 +156,7 @@ export const App: React.FC = () => {
           >
             <span>© 2026 Basireddy Yashwanth Reddy · Hyderabad, Telangana</span>
             <span className="sm" style={{ color: 'var(--mute)', textTransform: 'none' }}>
-              Sections 1 to 6 Active
+              Sections 1 to 7 Active
             </span>
           </div>
         </Container>
