@@ -95,6 +95,12 @@ export const portfolioData: PortfolioData = {
     'Some doors only open from the inside.',
     'This is where you come in.'
   ],
+  riseStory: [
+    { text: "THE JOURNEY DOESN'T", accent: 'END HERE.' },
+    { text: 'LEARN. BUILD. FAIL.', accent: 'REPEAT.' },
+    { text: 'EVERY STEP TAKES YOU', accent: 'HIGHER.' },
+    { text: 'STILL', accent: 'RISING.' }
+  ],
   stats: [
     { value: '8.4', label: 'CGPA · B.Tech CSE · 2024–2028' },
     { value: '97.7%', label: 'Intermediate MPC · 2022–2024' },

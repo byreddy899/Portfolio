@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Section 5: Rise — Cinematic Scroll Animation Section
+   ========================================================================== */
+
+#rise {
+  height: 350vh;
+  position: relative;
+  background-color: var(--bg);
+  z-index: 2;
+  overflow: clip;
+}
+
+.rise-stick {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 100%, #2e0d16 0%, #150610 45%, #07070a 85%);
+  contain: layout paint;
+}
+
+/* Atmospheric Luminous Clouds */
+.rise-cl {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  background: radial-gradient(circle, rgba(200, 80, 40, 0.8), rgba(74, 31, 58, 0.5) 60%, transparent 70%);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* Vertical Beam of Warm Light Extending Upward */
+.rise-pill {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 6px;
+  height: 75vh;
+  margin-left: -3px;
+  background: linear-gradient(
+    to top,
+    #ffffff 0%,
+    var(--fire) 35%,
+    rgba(255, 181, 46, 0.8) 65%,
+    transparent 100%
+  );
+  box-shadow: 0 0 50px 18px rgba(255, 80, 20, 0.6);
+  transform-origin: bottom;
+  will-change: transform, box-shadow;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Ascending Human Stick Figure */
+.rise-fig {
+  position: absolute;
+  left: 50%;
+  width: clamp(70px, 9vw, 110px);
+  margin-left: calc(clamp(70px, 9vw, 110px) / -2);
+  will-change: transform, bottom;
+  filter: drop-shadow(0 0 18px rgba(255, 140, 50, 0.95));
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Sequential Poetic Editorial Lines */
+.rise-lines {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 18vh;
+  text-align: center;
+  padding: 0 clamp(20px, 5vw, 60px);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.rise-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.75s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(28px, 5.8vw, 68px);
+  line-height: 1.1;
+  font-stretch: 125%;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  will-change: opacity, transform;
+}
+
+.rise-line.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Italic Instrument Serif emphasis */
+.rise-serif-accent {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  color: var(--gold);
+  margin-left: 0.22em;
+  letter-spacing: normal;
+}
+
+/* Climax warm light transition into next section */
+.rise-flash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 60%, rgba(255, 110, 20, 0.4), rgba(74, 18, 8, 0.2) 65%, transparent 85%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  will-change: opacity;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .rise-lines {
+    top: 15vh;
+    padding: 0 20px;
+  }
+  .rise-line {
+    font-size: clamp(24px, 7vw, 44px);
+  }
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .rise-line {
+    transition: none !important;
+  }
+  .rise-pill,
+  .rise-fig,
+  .rise-flash {
+    will-change: auto;
+  }
+}

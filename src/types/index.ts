@@ -47,6 +47,11 @@ export interface ContactChannel {
   copyable?: boolean;
 }
 
+export interface RiseStoryItem {
+  text: string;
+  accent: string;
+}
+
 export interface PortfolioData {
   identity: {
     name: string;
@@ -67,6 +72,7 @@ export interface PortfolioData {
   careerRoles: CareerRole[];
   openToData: OpenToSectionData;
   riseQuotes: string[];
+  riseStory: RiseStoryItem[];
   stats: StatItem[];
   internship: {
     role: string;
