@@ -41,7 +41,7 @@ export const Rise: React.FC = () => {
 
       // 1. Ascending Stick Figure: climbs upward and subtly scales into perspective
       if (figRef.current) {
-        const bottomVh = 8 + progress * 52;
+        const bottomVh = 10 + progress * 62;
         const scale = 1 - progress * 0.22;
         figRef.current.style.bottom = `${bottomVh}vh`;
         figRef.current.style.transform = `scale(${scale})`;
@@ -49,14 +49,14 @@ export const Rise: React.FC = () => {
 
       // 2. Vertical Light Beam: extends upward and intensifies in brightness
       if (pillRef.current) {
-        const scaleY = 0.35 + progress * 0.65;
-        const glowSpread = Math.floor(40 + progress * 80);
+        const scaleY = 0.35 + progress * 0.70;
+        const glowSpread = Math.floor(40 + progress * 85);
         const glowIntensity = (0.45 + progress * 0.45).toFixed(2);
         pillRef.current.style.transform = `scaleY(${scaleY})`;
         pillRef.current.style.boxShadow = `0 0 ${glowSpread}px 18px rgba(255, 90, 20, ${glowIntensity})`;
       }
 
-      // 3. Four Sequential Storytelling Phrases (revealed at 4 scroll intervals)
+      // 3. Four Sequential Storytelling Phrases (revealed at 4 responsive scroll intervals)
       // Phase 0: 0.00 - 0.25 (Opening)
       // Phase 1: 0.25 - 0.50 (Middle)
       // Phase 2: 0.50 - 0.75 (Next)
@@ -70,9 +70,9 @@ export const Rise: React.FC = () => {
         }
       });
 
-      // 4. Climax Warm Light Transition (at progress > 0.86)
+      // 4. Climax Warm Light Transition (responsive threshold progress > 0.80)
       if (flashRef.current) {
-        const flashOpacity = clamp((progress - 0.86) / 0.14, 0, 1);
+        const flashOpacity = clamp((progress - 0.80) / 0.20, 0, 1);
         flashRef.current.style.opacity = `${flashOpacity}`;
       }
 

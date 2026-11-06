@@ -33,7 +33,7 @@
 .open-to-row {
   border-top: 1px solid var(--line);
   position: relative;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.16s ease;
 }
 
 .open-to-row:last-child {
@@ -50,7 +50,7 @@
   align-items: center;
   gap: 20px;
   padding: clamp(20px, 3vw, 36px) 0;
-  transition: padding 0.35s ease;
+  transition: padding 0.16s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .open-to-btn:focus-visible {
@@ -71,7 +71,7 @@
   font-weight: 700;
   color: var(--mute);
   letter-spacing: 0.05em;
-  transition: color 0.3s ease;
+  transition: color 0.15s ease;
 }
 
 .open-to-row h3 {
@@ -83,20 +83,20 @@
   text-transform: uppercase;
   margin: 0;
   color: var(--ink);
-  transition: color 0.35s ease, transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: color 0.15s ease, transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, color;
 }
 
-/* Animated Arrow Indicator */
+/* Animated Arrow Indicator (responsive 180ms timing) */
 .open-to-arrow {
   font-family: var(--sans);
   font-size: clamp(24px, 3.2vw, 38px);
   font-weight: 700;
   color: var(--mute);
   opacity: 0.35;
-  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
-    color 0.3s ease,
-    opacity 0.3s ease;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.15s ease,
+    opacity 0.15s ease;
   user-select: none;
 }
 

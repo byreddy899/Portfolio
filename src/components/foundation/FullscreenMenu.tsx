@@ -53,7 +53,7 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose,
         clipPath: isOpen
           ? 'circle(150% at calc(100% - 60px) 40px)'
           : 'circle(0 at calc(100% - 60px) 40px)',
-        transition: 'clip-path 0.8s cubic-bezier(0.7, 0, 0.2, 1)',
+        transition: 'clip-path 0.42s cubic-bezier(0.16, 1, 0.3, 1)',
         visibility: isOpen ? 'visible' : 'hidden'
       }}
     >
@@ -73,7 +73,7 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose,
               textTransform: 'uppercase',
               textDecoration: 'none',
               color: 'var(--ink)',
-              transition: 'transform 0.35s ease, color 0.3s ease',
+              transition: 'transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), color 0.15s ease',
               display: 'inline-flex',
               alignItems: 'center',
               width: 'fit-content'

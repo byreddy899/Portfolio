@@ -95,7 +95,7 @@
   border-top: 1px solid var(--line);
   padding-top: clamp(20px, 3vw, 30px);
   position: relative;
-  transition: transform 0.3s ease;
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .about-edu-card:hover {
@@ -159,7 +159,7 @@
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(243, 239, 230, 0.4);
-  transition: color 0.3s ease, -webkit-text-stroke-color 0.3s ease, transform 0.3s ease;
+  transition: color 0.15s ease, -webkit-text-stroke-color 0.15s ease, transform 0.16s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: default;
   display: inline-block;
 }

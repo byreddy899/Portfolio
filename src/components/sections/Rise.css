@@ -3,7 +3,7 @@
    ========================================================================== */
 
 #rise {
-  height: 350vh;
+  height: 260vh;
   position: relative;
   background-color: var(--bg);
   z-index: 2;
@@ -86,8 +86,8 @@
   margin: 0;
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.75s cubic-bezier(0.2, 0.7, 0.2, 1),
-    transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
   color: var(--ink);
   font-family: var(--sans);
   font-weight: 900;

@@ -50,7 +50,7 @@
   background: radial-gradient(circle at 50% 70%, #0d0705 20%, #2a0a05 100%);
   box-shadow: 0 0 0 2px #ff7a3a, 0 0 70px 10px rgba(255, 80, 30, 0.5),
     inset 0 0 50px rgba(255, 120, 60, 0.35);
-  animation: gateFlick 3.5s infinite ease-in-out;
+  animation: gateFlick 2.5s infinite ease-in-out;
   user-select: none;
 }
 
@@ -72,7 +72,7 @@
   object-position: center 18%;
   display: block;
   filter: contrast(1.06) brightness(0.96) saturate(0.95);
-  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.8s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
 }
 
 .gate:hover .gate-img {
@@ -182,7 +182,7 @@
   font-size: 13.5px;
   font-weight: 600;
   letter-spacing: 0.02em;
-  transition: all 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .portal-link-left {
@@ -209,7 +209,7 @@
 .portal-link-arrow {
   color: var(--mute);
   font-size: 14px;
-  transition: transform 0.25s ease, color 0.25s ease;
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), color 0.15s ease;
 }
 
 .portal-link-item:hover {
@@ -355,7 +355,7 @@
   align-items: baseline;
   padding: 16px 8px;
   border-bottom: 1px solid var(--line);
-  transition: padding-left 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  transition: padding-left 0.16s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.16s ease, background 0.16s ease;
   border-radius: 4px;
 }
 
@@ -378,7 +378,7 @@
   color: var(--mute);
   letter-spacing: 0.08em;
   flex-shrink: 0;
-  transition: color 0.25s ease;
+  transition: color 0.15s ease;
 }
 
 .cert-item:hover .cert-number {
@@ -392,7 +392,7 @@
   font-size: clamp(15px, 1.8vw, 17px);
   color: var(--ink);
   line-height: 1.4;
-  transition: color 0.25s ease;
+  transition: color 0.15s ease;
 }
 
 .cert-item:hover .cert-text b {

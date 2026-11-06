@@ -35,25 +35,25 @@ export const TheLeap: React.FC = () => {
       const scrollableDist = rect.height - window.innerHeight;
       const progress = scrollableDist > 0 ? clamp(-rect.top / scrollableDist, 0, 1) : 0;
 
-      // 1. Stick Figure: Falls vertically and tumbles along the golden light beam
+      // 1. Stick Figure: Falls vertically and tumbles along the golden light beam with dynamic responsiveness
       if (figRef.current) {
-        const translateY = progress * 72;
-        const rotate = -30 + progress * 620;
+        const translateY = progress * 78;
+        const rotate = -30 + progress * 680;
         figRef.current.style.transform = `translate3d(0, ${translateY}vh, 0) rotate(${rotate}deg)`;
       }
 
-      // 2. Outlined "FALL": Moves left out of view gradually
+      // 2. Outlined "FALL": Responds swiftly, moving left out of view
       if (fallRef.current) {
-        const fallOpacity = Math.max(0, 1 - progress * 1.8);
-        const fallTranslateX = -progress * 35;
+        const fallOpacity = Math.max(0, 1 - progress * 2.2);
+        const fallTranslateX = -progress * 45;
         fallRef.current.style.opacity = `${fallOpacity}`;
         fallRef.current.style.transform = `translate3d(${fallTranslateX}vw, -50%, 0)`;
       }
 
-      // 3. Solid "LET GO": Moves towards the right and fades gradually
+      // 3. Solid "LET GO": Moves towards the right and fades smoothly
       if (goRef.current) {
-        const goOpacity = Math.max(0, 1 - progress * 1.8);
-        const goTranslateX = progress * 35;
+        const goOpacity = Math.max(0, 1 - progress * 2.2);
+        const goTranslateX = progress * 45;
         goRef.current.style.opacity = `${goOpacity}`;
         goRef.current.style.transform = `translate3d(${goTranslateX}vw, 0, 0)`;
       }
@@ -64,15 +64,15 @@ export const TheLeap: React.FC = () => {
         beamRef.current.style.opacity = `${beamOpacity}`;
       }
 
-      // 5. Climax Radial Flash: Triggers near the end of the section (progress > 0.84)
+      // 5. Climax Radial Flash: Triggers swiftly near transition (progress > 0.78)
       if (flashRef.current) {
-        const flashOpacity = clamp((progress - 0.84) / 0.16, 0, 1);
+        const flashOpacity = clamp((progress - 0.78) / 0.22, 0, 1);
         flashRef.current.style.opacity = `${flashOpacity}`;
       }
 
       // 6. Scroll Indicator: Fades out promptly when user initiates scroll
       if (hintRef.current) {
-        const hintOpacity = clamp(1 - progress * 5, 0, 1);
+        const hintOpacity = clamp(1 - progress * 6, 0, 1);
         hintRef.current.style.opacity = `${hintOpacity}`;
       }
 

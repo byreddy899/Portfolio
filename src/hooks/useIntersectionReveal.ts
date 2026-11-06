@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export function useIntersectionReveal(selector = '.rv', threshold = 0.12) {
+export function useIntersectionReveal(selector = '.rv', threshold = 0.05) {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -22,7 +22,7 @@ export function useIntersectionReveal(selector = '.rv', threshold = 0.12) {
           }
         });
       },
-      { threshold }
+      { threshold, rootMargin: '0px 0px -20px 0px' }
     );
 
     elements.forEach((el) => observer.observe(el));
