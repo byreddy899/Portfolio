@@ -9,6 +9,7 @@ import { Container } from './components/foundation/Container';
 import { TheLeap } from './components/sections/TheLeap';
 import { TheNoise } from './components/sections/TheNoise';
 import { SelectedWork } from './components/sections/SelectedWork';
+import { OpenTo } from './components/sections/OpenTo';
 import { useIntersectionReveal } from './hooks/useIntersectionReveal';
 
 export const App: React.FC = () => {
@@ -54,7 +55,10 @@ export const App: React.FC = () => {
       {/* 5. Section 3: Selected Work (Projects Section) */}
       <SelectedWork />
 
-      {/* 6. Section 3 Boundary */}
+      {/* 6. Section 4: Open To (Career Opportunities Section) */}
+      <OpenTo />
+
+      {/* 7. Section 4 Boundary */}
       <main style={{ position: 'relative', zIndex: 2, background: 'var(--bg)' }}>
         <section
           style={{
@@ -84,7 +88,7 @@ export const App: React.FC = () => {
                     boxShadow: '0 0 10px var(--fire)'
                   }}
                 />
-                Task 4 Complete · "Selected Work" Active
+                Task 5 Complete · "Open To" Active
               </div>
 
               <h2
@@ -94,7 +98,7 @@ export const App: React.FC = () => {
                   fontSize: 'clamp(32px, 6vw, 68px)'
                 }}
               >
-                Selected Work Verified
+                Open To Verified
               </h2>
 
               <p
@@ -105,19 +109,19 @@ export const App: React.FC = () => {
                   marginBottom: '28px'
                 }}
               >
-                The interactive accordion project cards with smooth CSS grid expansion, dynamic cursor lens peek,
-                tech tags, and repository links are live.
+                The career opportunities section is live with full-row ivory inversion hover states,
+                interactive title translation, and cursor peek lens tags.
               </p>
 
               <div className="note" style={{ maxWidth: '620px' }}>
-                Awaiting your evaluation of Task 4 before proceeding to Section 4 ("Open To").
+                Awaiting your evaluation of Task 5 before proceeding to Section 5 ("Rise").
               </div>
             </div>
           </Container>
         </section>
       </main>
 
-      {/* 7. Semantic Footer */}
+      {/* 8. Semantic Footer */}
       <footer
         style={{
           background: '#0a0a0a',
@@ -141,7 +145,7 @@ export const App: React.FC = () => {
           >
             <span>© 2026 Basireddy Yashwanth Reddy · Hyderabad, Telangana</span>
             <span className="sm" style={{ color: 'var(--mute)', textTransform: 'none' }}>
-              Sections 1, 2 &amp; 3 Active
+              Sections 1 to 4 Active
             </span>
           </div>
         </Container>

@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Section 4: Open To — Career Opportunities & Interactive Inversion
+   ========================================================================== */
+
+#opento {
+  padding: clamp(80px, 11vw, 150px) 0;
+  position: relative;
+  background-color: var(--bg);
+  z-index: 2;
+}
+
+#opento h2 {
+  margin-top: 0;
+  margin-bottom: clamp(28px, 5vw, 60px);
+}
+
+.open-to-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.open-to-row {
+  border-top: 1px solid var(--line);
+  position: relative;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.open-to-row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.open-to-btn {
+  all: unset;
+  box-sizing: border-box;
+  width: 100%;
+  cursor: default;
+  display: block;
+  padding: clamp(16px, 2vw, 26px) 12px;
+  transition: transform 0.3s ease;
+}
+
+.open-to-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.open-to-row h3 {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(26px, 4.6vw, 60px);
+  line-height: 1.1;
+  font-stretch: 125%;
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--ink);
+  transition: color 0.3s ease, transform 0.35s ease;
+}
+
+.open-to-row small {
+  display: block;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--mute);
+  text-transform: none;
+  margin-top: 6px;
+  transition: color 0.3s ease;
+}
+
+/* Dramatic Inversion State on Hover */
+.open-to-row:hover {
+  background-color: var(--ink);
+}
+
+.open-to-row:hover h3 {
+  color: #0a0a0a;
+  transform: translateX(10px);
+}
+
+.open-to-row:hover small {
+  color: #333333;
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .open-to-row {
+    transition: none !important;
+  }
+  .open-to-row h3 {
+    transition: none !important;
+  }
+  .open-to-row:hover h3 {
+    transform: none !important;
+  }
+}
