@@ -91,11 +91,18 @@
   color: #ffffff;
 }
 
+/* Ensure that open rows remain 100% visible even during React state re-renders */
+.row.open {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* Accordion Smooth Grid-Row Expansion (optimized to ~340ms) */
 .bd {
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.34s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 0;
 }
 
 .row.open .bd {
@@ -104,6 +111,7 @@
 
 .bd > div {
   overflow: hidden;
+  min-height: 0;
 }
 
 .in {

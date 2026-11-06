@@ -24,7 +24,8 @@ export const SelectedWork: React.FC = () => {
       <Container>
         <h2 className="big rv">Selected work</h2>
 
-        <div id="plist" className="plist">
+        {/* Project List container carries .rv so the list reveals on scroll */}
+        <div id="plist" className="plist rv">
           {projects.map((p) => {
             const isOpen = !!openProjects[p.id];
             const panelId = `panel-${p.id}`;
@@ -32,7 +33,7 @@ export const SelectedWork: React.FC = () => {
             return (
               <div
                 key={p.id}
-                className={`row rv ${isOpen ? 'open' : ''}`}
+                className={`row ${isOpen ? 'open' : ''}`}
                 data-peek={isOpen ? 'Close' : 'Open'}
               >
                 <button
