@@ -8,6 +8,7 @@ import { CursorPeek } from './components/foundation/CursorPeek';
 import { Container } from './components/foundation/Container';
 import { TheLeap } from './components/sections/TheLeap';
 import { TheNoise } from './components/sections/TheNoise';
+import { SelectedWork } from './components/sections/SelectedWork';
 import { useIntersectionReveal } from './hooks/useIntersectionReveal';
 
 export const App: React.FC = () => {
@@ -50,7 +51,10 @@ export const App: React.FC = () => {
       {/* 4. Section 2: The Noise (Skills Section) */}
       <TheNoise />
 
-      {/* 5. Section 2 Boundary */}
+      {/* 5. Section 3: Selected Work (Projects Section) */}
+      <SelectedWork />
+
+      {/* 6. Section 3 Boundary */}
       <main style={{ position: 'relative', zIndex: 2, background: 'var(--bg)' }}>
         <section
           style={{
@@ -80,7 +84,7 @@ export const App: React.FC = () => {
                     boxShadow: '0 0 10px var(--fire)'
                   }}
                 />
-                Task 3 Complete · "The Noise" (Skills Section)
+                Task 4 Complete · "Selected Work" Active
               </div>
 
               <h2
@@ -90,7 +94,7 @@ export const App: React.FC = () => {
                   fontSize: 'clamp(32px, 6vw, 68px)'
                 }}
               >
-                The Noise Active
+                Selected Work Verified
               </h2>
 
               <p
@@ -101,19 +105,19 @@ export const App: React.FC = () => {
                   marginBottom: '28px'
                 }}
               >
-                The continuous alternating marquees, category-colored hover illumination, interactive row hover-pausing,
-                glowing central solar orb, and circular rotating tech ring are live and running smoothly.
+                The interactive accordion project cards with smooth CSS grid expansion, dynamic cursor lens peek,
+                tech tags, and repository links are live.
               </p>
 
               <div className="note" style={{ maxWidth: '620px' }}>
-                Awaiting your evaluation of Task 3 before proceeding to the next section.
+                Awaiting your evaluation of Task 4 before proceeding to Section 4 ("Open To").
               </div>
             </div>
           </Container>
         </section>
       </main>
 
-      {/* 6. Semantic Footer */}
+      {/* 7. Semantic Footer */}
       <footer
         style={{
           background: '#0a0a0a',
@@ -137,7 +141,7 @@ export const App: React.FC = () => {
           >
             <span>© 2026 Basireddy Yashwanth Reddy · Hyderabad, Telangana</span>
             <span className="sm" style={{ color: 'var(--mute)', textTransform: 'none' }}>
-              Sections 1 &amp; 2 Active
+              Sections 1, 2 &amp; 3 Active
             </span>
           </div>
         </Container>
