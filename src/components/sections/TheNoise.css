@@ -23,12 +23,9 @@
   gap: clamp(8px, 1.6vw, 18px);
   margin: clamp(20px, 4vw, 40px) 0;
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
 }
 
 .mq-row {

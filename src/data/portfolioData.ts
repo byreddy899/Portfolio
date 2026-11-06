@@ -62,7 +62,7 @@ export const portfolioData: PortfolioData = {
       ],
       tags: ['React Native', 'Expo', 'TypeScript', 'FastAPI', 'LangGraph', 'Supabase', 'pgvector'],
       repoUrl: 'https://github.com/Sri-dinesh/RecruitAI',
-      note: 'Team project from the Mobile Application Development Laboratory. Add your own role here.'
+      note: 'Collaborative team project developed in the Mobile Application Development Laboratory.'
     }
   ],
   careerRoles: [
