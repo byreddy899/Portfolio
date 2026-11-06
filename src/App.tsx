@@ -7,6 +7,7 @@ import { ParticleCanvas } from './components/foundation/ParticleCanvas';
 import { CursorPeek } from './components/foundation/CursorPeek';
 import { Container } from './components/foundation/Container';
 import { TheLeap } from './components/sections/TheLeap';
+import { TheNoise } from './components/sections/TheNoise';
 import { useIntersectionReveal } from './hooks/useIntersectionReveal';
 
 export const App: React.FC = () => {
@@ -46,7 +47,10 @@ export const App: React.FC = () => {
       {/* 3. Section 1: The Leap (Full-screen Cinematic Hero Experience) */}
       <TheLeap />
 
-      {/* 4. Section 1 Completion Anchor & Boundary */}
+      {/* 4. Section 2: The Noise (Technology Marquees & Pulsing Solar Orb) */}
+      <TheNoise />
+
+      {/* 5. Section 2 Completion Boundary */}
       <main style={{ position: 'relative', zIndex: 2, background: 'var(--bg)' }}>
         <section
           style={{
@@ -76,7 +80,7 @@ export const App: React.FC = () => {
                     boxShadow: '0 0 10px var(--fire)'
                   }}
                 />
-                Section 1 Verified · "The Leap"
+                Sections 1 &amp; 2 Verified · "The Leap" + "The Noise"
               </div>
 
               <h2
@@ -86,7 +90,7 @@ export const App: React.FC = () => {
                   fontSize: 'clamp(32px, 6vw, 72px)'
                 }}
               >
-                The Fall Concludes
+                Next Up: Selected Work
               </h2>
 
               <p
@@ -97,20 +101,21 @@ export const App: React.FC = () => {
                   marginBottom: '28px'
                 }}
               >
-                The opening scroll-controlled descent of "The Leap" is complete. As you scroll down from the top,
-                the figure tumbles through the golden light beam, typography dissolves, and the radiant warm climax
-                lights the threshold.
+                "The Noise" multi-speed kinetic marquees, alternating direction shifts, interactive hover lighting,
+                pulsing solar orb, and circular rotating tech ring are live.
+                The next section is <strong>"Selected Work"</strong> featuring expandable project details, tech tags,
+                and repository links.
               </p>
 
               <div className="note" style={{ maxWidth: '620px' }}>
-                Awaiting your evaluation of Section 1 before proceeding to Section 2 ("The Noise").
+                Awaiting your evaluation of Section 2 before implementing Section 3 ("Selected Work").
               </div>
             </div>
           </Container>
         </section>
       </main>
 
-      {/* 5. Semantic Footer */}
+      {/* 6. Semantic Footer */}
       <footer
         style={{
           background: '#0a0a0a',
@@ -134,7 +139,7 @@ export const App: React.FC = () => {
           >
             <span>© 2026 Basireddy Yashwanth Reddy · Hyderabad, Telangana</span>
             <span className="sm" style={{ color: 'var(--mute)', textTransform: 'none' }}>
-              Section 1: The Leap
+              The Leap &amp; The Noise Active
             </span>
           </div>
         </Container>

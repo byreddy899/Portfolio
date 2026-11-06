@@ -30,8 +30,9 @@ export const portfolioData: PortfolioData = {
     additionalSkills: [
       'Android Studio',
       'AutoCAD',
-      'Arduino and Raspberry Pi (basic)',
-      'Mobile app development lab'
+      'Arduino',
+      'Raspberry Pi',
+      'Mobile Application Development'
     ]
   },
   projects: [
