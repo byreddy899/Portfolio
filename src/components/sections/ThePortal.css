@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Section 7: The Portal — Architectural Gate, Experience & Certifications
+   ========================================================================== */
+
+#portal {
+  padding: clamp(80px, 11vw, 150px) 0;
+  position: relative;
+  background-color: var(--bg);
+  z-index: 2;
+}
+
+#portal h2 {
+  margin-top: 0;
+  margin-bottom: clamp(28px, 5vw, 60px);
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(30px, 6vw, 80px);
+  align-items: center;
+}
+
+@media (max-width: 820px) {
+  .portal-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* Glowing Arch Gate Portal */
+.gate {
+  aspect-ratio: 3/4;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  border-radius: 200px 200px 0 0;
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 70%, #000000 20%, #2a0a05);
+  box-shadow: 0 0 0 2px #ff7a3a, 0 0 80px 10px rgba(255, 80, 30, 0.6),
+    inset 0 0 60px rgba(255, 120, 60, 0.5);
+  animation: gateFlick 3s infinite ease-in-out;
+  user-select: none;
+}
+
+@keyframes gateFlick {
+  0%, 100% {
+    box-shadow: 0 0 0 2px #ff7a3a, 0 0 80px 10px rgba(255, 80, 30, 0.6),
+      inset 0 0 60px rgba(255, 120, 60, 0.5);
+  }
+  40% {
+    box-shadow: 0 0 0 2px #ffb070, 0 0 120px 24px rgba(255, 80, 30, 0.8),
+      inset 0 0 80px rgba(255, 120, 60, 0.6);
+  }
+}
+
+.gate-content {
+  text-align: center;
+  padding: 24px;
+}
+
+.gate-monogram {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(72px, 9vw, 96px);
+  line-height: 1;
+  color: var(--gold);
+  text-shadow: 0 0 30px rgba(255, 181, 46, 0.6);
+}
+
+.gate-label {
+  display: block;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--mute);
+  margin-top: 12px;
+  letter-spacing: 0.06em;
+}
+
+/* Featured Experience Card */
+.portal-card {
+  border: 1px solid var(--line);
+  padding: clamp(20px, 3vw, 32px);
+  margin-bottom: 28px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  border-radius: 4px;
+}
+
+.portal-card h3 {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(22px, 3.2vw, 30px);
+  line-height: 1.1;
+  font-stretch: 112%;
+  text-transform: uppercase;
+  margin: 8px 0 12px;
+  color: var(--ink);
+}
+
+.portal-card-desc {
+  color: #d8d1c4;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Certifications List */
+.cert-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  transition: padding 0.3s ease, border-color 0.3s ease;
+}
+
+.cert-item:hover {
+  padding-left: 12px;
+  border-color: rgba(255, 181, 46, 0.4);
+}
+
+.cert-item b {
+  display: block;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: var(--ink);
+  line-height: 1.4;
+  transition: color 0.25s ease;
+}
+
+.cert-item:hover b {
+  color: var(--gold);
+}
+
+.cert-item small {
+  display: block;
+  color: var(--mute);
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.cert-item i {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--mute);
+  font-style: normal;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .gate {
+    animation: none !important;
+  }
+  .cert-item {
+    transition: none !important;
+  }
+}
