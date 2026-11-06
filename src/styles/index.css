@@ -1,0 +1,195 @@
+/* ==========================================================================
+   Basireddy Yashwanth Reddy — Cinematic Portfolio
+   Global Design System & Typography Engine
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --bg: #07070a;
+  --bg-elevated: #0b0b0f;
+  --ink: #f3efe6;
+  --mute: #9b948a;
+  --fire: #ff5a0a;
+  --gold: #ffb52e;
+  --yel: #f5e642;
+  --blue: #4c6fff;
+  --line: rgba(243, 239, 230, 0.2);
+  --line-light: rgba(243, 239, 230, 0.1);
+
+  /* Typography */
+  --sans: "Archivo", "Arial Black", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Impact, sans-serif;
+  --serif: "Instrument Serif", Georgia, Cambria, "Times New Roman", serif;
+
+  /* Spacing & Layout */
+  --wrap-max: 1200px;
+  --header-height: 72px;
+
+  /* Safe Area Insets for Mobile */
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+  background: var(--bg);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Base interactive elements */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Accessibility & Focus indicators */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* Typography Utility Classes */
+.big {
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(56px, 13vw, 210px);
+  line-height: 0.86;
+  font-stretch: 125%;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+
+.ser {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(22px, 3.2vw, 40px);
+  line-height: 1.2;
+}
+
+.sm {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 56px);
+}
+
+/* Section styling */
+.sec {
+  padding: clamp(80px, 11vw, 150px) 0;
+  position: relative;
+}
+
+.sec h2 {
+  margin-top: 0;
+  margin-bottom: clamp(28px, 5vw, 60px);
+}
+
+/* Common UI Elements */
+.tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 4px 13px;
+  border-radius: 99px;
+  margin: 0 6px 8px 0;
+  white-space: nowrap;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: #0a0a0a;
+  padding: 13px 26px;
+  border-radius: 99px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  background: var(--fire);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.note {
+  border-left: 2px solid var(--fire);
+  padding-left: 14px;
+  color: var(--mute);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 16px 0;
+}
+
+/* Reveal on Scroll Effect */
+.rv {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.rv.on {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reduced Motion Mode */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .rv {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
