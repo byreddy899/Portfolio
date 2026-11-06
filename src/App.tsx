@@ -11,6 +11,7 @@ import { TheNoise } from './components/sections/TheNoise';
 import { SelectedWork } from './components/sections/SelectedWork';
 import { OpenTo } from './components/sections/OpenTo';
 import { Rise } from './components/sections/Rise';
+import { About } from './components/sections/About';
 import { useIntersectionReveal } from './hooks/useIntersectionReveal';
 
 export const App: React.FC = () => {
@@ -62,7 +63,10 @@ export const App: React.FC = () => {
       {/* 7. Section 5: Rise (Scroll-driven Ascent Scene) */}
       <Rise />
 
-      {/* 8. Section 5 Boundary */}
+      {/* 8. Section 6: About (Academic Highlights & Background Narrative) */}
+      <About />
+
+      {/* 9. Section 6 Boundary */}
       <main style={{ position: 'relative', zIndex: 2, background: 'var(--bg)' }}>
         <section
           style={{
@@ -92,7 +96,7 @@ export const App: React.FC = () => {
                     boxShadow: '0 0 10px var(--fire)'
                   }}
                 />
-                Task 6 Complete · "Rise" Verified
+                Task 7 Complete · "About" Verified
               </div>
 
               <h2
@@ -102,7 +106,7 @@ export const App: React.FC = () => {
                   fontSize: 'clamp(32px, 6vw, 68px)'
                 }}
               >
-                Next Up: About
+                Next Up: The Portal
               </h2>
 
               <p
@@ -113,18 +117,18 @@ export const App: React.FC = () => {
                   marginBottom: '28px'
                 }}
               >
-                The "Rise" ascent sequence is live with the 300vh sticky scene, glowing laser pillar, ascending figure climbing upwards, and the three sequential poetic editorial statements.
+                The "About" section is live displaying authentic academic CGPA metrics, intermediate percentages, SSC performance, and the editorial narrative.
               </p>
 
               <div className="note" style={{ maxWidth: '620px' }}>
-                Awaiting your evaluation of Task 6 before proceeding to Section 6 ("About").
+                Awaiting your evaluation of Task 7 before proceeding to Section 7 ("The Portal").
               </div>
             </div>
           </Container>
         </section>
       </main>
 
-      {/* 9. Semantic Footer */}
+      {/* 10. Semantic Footer */}
       <footer
         style={{
           background: '#0a0a0a',
@@ -148,7 +152,7 @@ export const App: React.FC = () => {
           >
             <span>© 2026 Basireddy Yashwanth Reddy · Hyderabad, Telangana</span>
             <span className="sm" style={{ color: 'var(--mute)', textTransform: 'none' }}>
-              Sections 1 to 5 Active
+              Sections 1 to 6 Active
             </span>
           </div>
         </Container>

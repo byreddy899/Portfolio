@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Section 6: About — Academic Stats & Editorial Narrative
+   ========================================================================== */
+
+#about {
+  padding: clamp(80px, 11vw, 150px) 0;
+  position: relative;
+  background-color: var(--bg);
+  z-index: 2;
+}
+
+#about h2 {
+  margin-top: 0;
+  margin-bottom: clamp(28px, 5vw, 60px);
+}
+
+/* Academic Stats 3-Column Grid */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3.5vw, 40px);
+  margin-bottom: clamp(48px, 6vw, 72px);
+}
+
+@media (max-width: 768px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.about-stat-item {
+  border-top: 1px solid var(--line);
+  padding-top: clamp(16px, 2.5vw, 24px);
+}
+
+.about-stat-item b {
+  display: block;
+  font-family: var(--sans);
+  font-weight: 900;
+  font-size: clamp(52px, 8.5vw, 120px);
+  line-height: 1;
+  font-stretch: 125%;
+  letter-spacing: -0.03em;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.about-stat-item .sm {
+  display: block;
+  color: var(--mute);
+  line-height: 1.5;
+}
+
+/* 2-Column Narrative Editorial Layout */
+.about-narrative {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(30px, 6vw, 80px);
+  align-items: start;
+}
+
+@media (max-width: 820px) {
+  .about-narrative {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.about-editorial {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.28;
+  color: var(--ink);
+  margin: 0;
+}
+
+.about-bio {
+  color: #cfc8ba;
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.7;
+  margin: 0;
+}
